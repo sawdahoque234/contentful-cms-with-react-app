@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
   const client = createClient({
-    space: "wfl3hkkser1k",
-    accessToken: "B4qB3MxMz0bDkgtoBU6-pRhPe8D2ff8OVGc34FpGT-w",
+    space: process.env.REACT_APP_SPACE_ID,
+    accessToken: process.env.REACT_APP_ACCESS_TOKEN,
   });
   useEffect(() => {
     const getAllEntries = async () => {
@@ -25,7 +25,7 @@ const Blogs = () => {
 
   return (
     <>
-    
+      <h3 className="text-danger py-3 text-center">Read Our Popular Blog</h3>
       <div className="row d-flex justify-content-center">
         {blogs?.items?.map((blog) => (
           <>
